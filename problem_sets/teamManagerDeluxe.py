@@ -6,6 +6,7 @@ class Player (object):
                 self.goals = goals
 		self.jersey_number = jersey_number
 		self.position = position
+#allows user to get summary of player 
 	def getStats(self):
                 summary = "Name: " + self.name + '\n'
                 summary = summary + "Age: " + str(self.age) + '\n'
@@ -23,7 +24,7 @@ def LoadTeam(playerList,filename):
        		playerList.append(z)
 		myReadLine = file.readline()
        file.close()
-
+#allows user to save the team by writing the player's info to the file
 def saveTeam(playerList, filename):
        file = open(filename, 'a')
        for player in playerList:
@@ -67,7 +68,7 @@ while x == True:
 		user_enteredposition = raw_input()
                 myPlayer = Player(user_enteredname, user_enteredage, user_enteredgoals,user_enterednumber, user_enteredposition)
                 list.append(myPlayer) 
-	#prints players in myPLayer list
+	#prints players in  list
 	elif y == 2:
         	for l in list:
 	        	print(l.getStats())
